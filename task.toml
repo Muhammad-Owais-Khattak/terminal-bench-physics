@@ -1,0 +1,43 @@
+schema_version = "1.4"
+artifacts = ["/root/solver/search.py"]
+
+[task]
+name = "turing/gw-glitch-search"
+description = "Write a program that decides whether a two-detector gravitational-wave strain segment with instrumental glitches contains a real compact-binary inspiral and measures its coalescence time and detector-frame chirp mass; it is checked on 72 held-out segments simulated at check time."
+version = "1.0.0"
+keywords = ["gravitational-waves", "matched-filtering", "glitch-mitigation", "chi-squared-veto", "coincidence", "chirp-mass"]
+
+[metadata]
+domain = "physical-sciences"
+category = "physics"
+subcategory = "gravitational-wave-astronomy"
+field = "physics"
+subfield = "gravitational-wave-astronomy"
+tags = ["gravitational-waves", "matched-filtering", "glitch-mitigation", "chi-squared-veto", "coincidence", "chirp-mass"]
+expert_time_estimate_hours = 8.0
+reward_type = "binary"
+source = "Written by PhD annotators"
+public_overlap = "None"
+conflicts_of_interest = "None"
+
+[verifier]
+timeout_sec = 3600
+environment_mode = "separate"
+network_mode = "no-network"
+
+[verifier.environment]
+network_mode = "no-network"
+cpus = 1
+memory_mb = 2048
+
+[agent]
+timeout_sec = 18000
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+network_mode = "public"
